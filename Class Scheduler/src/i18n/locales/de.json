@@ -1,0 +1,50 @@
+{
+  "navbar": {
+    "teacherDashboard": "Lehrer-Dashboard",
+    "studentView": "Schüleransicht",
+    "logout": "Abmelden",
+    "classScheduler": "Stundenplan-Planer"
+  },
+  "auth": {
+    "welcomeBack": "Willkommen Zurück",
+    "joinClassScheduler": "Dem Stundenplan-Planer Beitreten",
+    "loginDescription": "Geben Sie Ihre Anmeldedaten ein, um fortzufahren",
+    "signupDescription": "Erstellen Sie Ihr Konto, um Sitzungen zu buchen",
+    "fullName": "Vollständiger Name",
+    "namePlaceholder": "Max Mustermann",
+    "iAm": "ICH BIN...",
+    "student": "Schüler",
+    "teacher": "Lehrer",
+    "email": "E-Mail-Adresse",
+    "password": "Passwort",
+    "confirmPassword": "Passwort Bestätigen",
+    "passwordMismatch": "Passwörter stimmen nicht überein",
+    "login": "Anmelden",
+    "signup": "Anmeldung",
+    "noAccount": "Noch kein Konto?",
+    "haveAccount": "Haben Sie bereits ein Konto?"
+  },
+  "teacherDashboard": {
+    "title": "Lehrer-Dashboard",
+    "teacher": "Lehrer",
+    "createdSlots": "Erstellte Zeitfenster",
+    "createNewSession": "Neue Sitzung Erstellen",
+    "generate15mSlot": "15-Min-Slot Generieren",
+    "scheduleOverview": "Zeitplanübersicht",
+    "noSessions": "Noch keine Sitzungen geplant. Erstellen Sie oben einen Termin.",
+    "15minSession": "15-Minuten-Sitzung"
+  },
+  "studentView": {
+    "title": "Sitzung Buchen",
+    "description": "Wählen Sie einen Zeitfenster, der zu Ihrem Zeitplan passt.",
+    "noAvailable": "Momentan keine verfügbaren Slots. Schauen Sie bald vorbei!",
+    "instructor": "Dozent",
+    "reserveSpot": "Platz Reservieren",
+    "bookingConfirmed": "🎉 Buchung Bestätigt! Bis bald."
+  },
+  "common": {
+    "available": "Verfügbar",
+    "booked": "Gebucht",
+    "error": "Fehler"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "navbar": {
+    "teacherDashboard": "Panel del Profesor",
+    "studentView": "Vista del Estudiante",
+    "logout": "Cerrar Sesión",
+    "classScheduler": "Planificador de Clases"
+  },
+  "auth": {
+    "welcomeBack": "Bienvenido de Vuelta",
+    "joinClassScheduler": "Únete al Planificador de Clases",
+    "loginDescription": "Ingresa tus credenciales para continuar",
+    "signupDescription": "Crea tu cuenta para comenzar a reservar sesiones",
+    "fullName": "Nombre Completo",
+    "namePlaceholder": "Juan García",
+    "iAm": "SOY UN...",
+    "student": "Estudiante",
+    "teacher": "Profesor",
+    "email": "Correo Electrónico",
+    "password": "Contraseña",
+    "confirmPassword": "Confirmar Contraseña",
+    "passwordMismatch": "Las contraseñas no coinciden",
+    "login": "Iniciar Sesión",
+    "signup": "Registrarse",
+    "noAccount": "¿No tienes cuenta?",
+    "haveAccount": "¿Ya tienes cuenta?"
+  },
+  "teacherDashboard": {
+    "title": "Panel del Profesor",
+    "teacher": "Profesor",
+    "createdSlots": "Slots Creados",
+    "createNewSession": "Crear Nueva Sesión",
+    "generate15mSlot": "Generar Slot de 15m",
+    "scheduleOverview": "Descripción General del Horario",
+    "noSessions": "No hay sesiones programadas aún. Comienza creando un slot arriba.",
+    "15minSession": "Sesión de 15 Minutos"
+  },
+  "studentView": {
+    "title": "Reservar una Sesión",
+    "description": "Selecciona un horario que se ajuste a tu calendario.",
+    "noAvailable": "No hay slots disponibles por ahora. ¡Vuelve pronto!",
+    "instructor": "Instructor",
+    "reserveSpot": "Reservar Lugar",
+    "bookingConfirmed": "🎉 ¡Reserva Confirmada! Nos vemos allí."
+  },
+  "common": {
+    "available": "Disponible",
+    "booked": "Reservado",
+    "error": "Error"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "class-scheduler-root",
+  "private": true,
+  "scripts": {
+    "dev": "npm run dev --prefix \"Class Scheduler\"",
+    "build": "npm run build --prefix \"Class Scheduler\"",
+    "lint": "npm run lint --prefix \"Class Scheduler\"",
+    "preview": "npm run preview --prefix \"Class Scheduler\""
+  },
+  "dependencies": {
+    "i18next": "^26.0.8",
+    "react-i18next": "^17.0.6",
+    "react-router-dom": "^7.14.2"
+  }
+}

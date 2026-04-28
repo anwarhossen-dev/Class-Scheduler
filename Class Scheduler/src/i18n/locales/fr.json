@@ -1,0 +1,50 @@
+{
+  "navbar": {
+    "teacherDashboard": "Tableau de Bord Enseignant",
+    "studentView": "Vue Étudiant",
+    "logout": "Déconnexion",
+    "classScheduler": "Planificateur de Classe"
+  },
+  "auth": {
+    "welcomeBack": "Bienvenue",
+    "joinClassScheduler": "Rejoindre le Planificateur de Classe",
+    "loginDescription": "Entrez vos identifiants pour continuer",
+    "signupDescription": "Créez votre compte pour commencer à réserver des sessions",
+    "fullName": "Nom Complet",
+    "namePlaceholder": "Jean Dupont",
+    "iAm": "JE SUIS UN...",
+    "student": "Étudiant",
+    "teacher": "Enseignant",
+    "email": "Adresse Email",
+    "password": "Mot de Passe",
+    "confirmPassword": "Confirmer le Mot de Passe",
+    "passwordMismatch": "Les mots de passe ne correspondent pas",
+    "login": "Connexion",
+    "signup": "S'inscrire",
+    "noAccount": "Vous n'avez pas de compte?",
+    "haveAccount": "Vous avez déjà un compte?"
+  },
+  "teacherDashboard": {
+    "title": "Tableau de Bord Enseignant",
+    "teacher": "Enseignant",
+    "createdSlots": "Créneaux Créés",
+    "createNewSession": "Créer une Nouvelle Session",
+    "generate15mSlot": "Générer Créneau 15m",
+    "scheduleOverview": "Aperçu de l'Horaire",
+    "noSessions": "Aucune session programmée pour le moment. Commencez par créer un créneau ci-dessus.",
+    "15minSession": "Session de 15 Minutes"
+  },
+  "studentView": {
+    "title": "Réserver une Session",
+    "description": "Sélectionnez un créneau qui vous convient le mieux.",
+    "noAvailable": "Aucun créneau disponible pour le moment. Revenez bientôt!",
+    "instructor": "Instructeur",
+    "reserveSpot": "Réserver une Place",
+    "bookingConfirmed": "🎉 Réservation Confirmée! À bientôt."
+  },
+  "common": {
+    "available": "Disponible",
+    "booked": "Réservé",
+    "error": "Erreur"
+  }
+}
