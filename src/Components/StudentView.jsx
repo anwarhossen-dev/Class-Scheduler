@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 import 'react-calendar/dist/Calendar.css';
 
 const StudentView = () => {
-  const { slots, bookSlot } = useSlots();
+  const { slots, bookSlot, cancelSlot } = useSlots(); // Import cancelSlot
   const { currentUser } = useAuth();
   const [selectedDate, setSelectedDate] = useState(new Date());
   
@@ -22,7 +22,7 @@ const StudentView = () => {
 
   const handleBook = (id) => {
     Swal.fire({
-      title: 'Confirm Booking?',
+      title: 'Confirm Booking',
       text: "Do you want to reserve this time slot?",
       icon: 'question',
       showCancelButton: true,
@@ -36,6 +36,28 @@ const StudentView = () => {
           title: 'Booked!',
           text: '🎉 Your session has been confirmed.',
           icon: 'success',
+          confirmButtonColor: 'var(--primary)',
+        });
+      }
+    });
+  };
+
+  const handleCancel = (id) => {
+    Swal.fire({
+      title: 'Confirm Cancellation',
+      text: "Are you sure you want to cancel this booking?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: 'var(--danger)', // Use danger color for cancellation
+      cancelButtonColor: 'var(--text-muted)',
+      confirmButtonText: 'Yes, cancel it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        cancelSlot(id);
+        Swal.fire({
+          title: 'Cancelled!',
+          text: 'Your booking has been cancelled.',
+          icon: 'info', // Changed to info for cancellation
           confirmButtonColor: 'var(--primary)',
         });
       }
@@ -59,8 +81,21 @@ const StudentView = () => {
               Welcome, <strong>{currentUser?.name}</strong>! Select a time slot that works best for you.
             </p>
           </div>
-          <div className="stat-pill">
-            My Bookings: <strong>{myBookings.length}</strong>
+          <div style={{ display: 'flex', gap: '1rem' }}>
+            <div 
+              className="stat-pill clickable" 
+              onClick={() => document.getElementById('available-slots-section')?.scrollIntoView({ behavior: 'smooth' })}
+              title="Jump to Available Slots"
+            >
+              Booking: <strong>{availableOnSelectedDate.length}</strong>
+            </div>
+            <div 
+              className="stat-pill clickable" 
+              onClick={() => document.getElementById('my-bookings-section')?.scrollIntoView({ behavior: 'smooth' })}
+              title="Jump to My Bookings"
+            >
+              My Bookings: <strong>{myBookings.length}</strong>
+            </div>
           </div>
         </div>
       </header>
@@ -78,7 +113,7 @@ const StudentView = () => {
           </div>
         </section>
 
-        <section className="slots-section">
+        <section id="available-slots-section" className="slots-section">
           <h2 className="section-title">Available for {selectedDate.toLocaleDateString()}</h2>
           <div className="slots-grid">
           {availableOnSelectedDate.length === 0 ? (
@@ -88,7 +123,7 @@ const StudentView = () => {
             </div>
           ) : (
             availableOnSelectedDate.map(slot => (
-              <div key={slot.id} className="slot-card available">
+              <div key={slot.id} className="slot-card available" style={{ border: 'none', borderRadius: '20px' }}>
                 <div className="slot-time-box">
                   <div className="time-icon">⏰</div>
                   <div className="time-text">
@@ -118,8 +153,17 @@ const StudentView = () => {
         </section>
       </div>
 
-      <section>
-        <h2 className="section-title">My Bookings</h2>
+      <section id="my-bookings-section" style={{ paddingTop: '2rem', borderTop: 'none' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
+          <h2 className="section-title" style={{ margin: 0 }}>My Bookings</h2>
+          <button 
+            className="btn-link"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            style={{ background: 'none', color: 'var(--primary)', fontWeight: '600' }}
+          >
+            ↑ Book Another Session
+          </button>
+        </div>
         <div className="slots-grid">
           {myBookings.length === 0 ? (
             <div className="no-slots">
@@ -127,10 +171,10 @@ const StudentView = () => {
             </div>
           ) : (
             myBookings.map(slot => (
-              <div key={slot.id} className="slot-card booked" style={{ opacity: new Date(slot.startTime) < new Date() ? 0.6 : 1 }}>
+              <div key={slot.id} className="slot-card booked" style={{ border: 'none', borderRadius: '20px', opacity: new Date(slot.startTime) < new Date() ? 0.6 : 1 }}>
                 {/* Determine if the slot is in the past */}
                 {(() => {
-                  const isPastSlot = new Date(slot.startTime) < new Date();
+                  const isPastSlot = new Date(slot.endTime) < new Date(); // Check against endTime for completion
                   const icon = isPastSlot ? '🕰️' : '✅'; // Clock for past, check for upcoming
                   const statusText = isPastSlot ? 'Completed' : slot.status;
                   const statusClass = isPastSlot ? 'badge-completed' : 'badge-booked'; // Assuming badge-completed exists or will be added
@@ -153,6 +197,15 @@ const StudentView = () => {
                   <span style={{ fontWeight: '600' }}>{slot.teacherName}</span>
                 </div>
                 <div className={`badge ${statusClass}`}>{statusText}</div>
+                {!isPastSlot && ( // Only show cancel button for upcoming bookings
+                  <button
+                    className="btn-danger" // Use a new danger button style
+                    onClick={() => handleCancel(slot.id)}
+                    style={{ marginTop: '1rem', width: '100%' }}
+                  >
+                    Cancel Booking
+                  </button>
+                )}
                     </>
                   );
                 })()}

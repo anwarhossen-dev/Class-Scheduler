@@ -646,7 +646,7 @@ export const SlotProvider = ({ children }) => {
 
   const bookSlot = (slotId) => {
     setSlots(prev => prev.map(slot => 
-      slot.id === slotId ? { ...slot, status: 'Booked' } : slot
+      slot.id === slotId ? { ...slot, status: 'Booked', studentId: currentUser?.id } : slot
     ));
     return { success: true, message: "Slot booked successfully!" };
   };

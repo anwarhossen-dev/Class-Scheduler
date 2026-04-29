@@ -2,9 +2,24 @@ import { useState, useMemo } from 'react';
 import { useSlots } from '../contexts/SlotContext';
 import Swal from 'sweetalert2';
 
+const getNextRoundHour = () => {
+  const now = new Date();
+  // Move to the next hour and reset minutes/seconds
+  now.setHours(now.getHours() + 1);
+  now.setMinutes(0, 0, 0);
+  
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, '0');
+  const day = String(now.getDate()).padStart(2, '0');
+  const hours = String(now.getHours()).padStart(2, '0');
+  const minutes = '00';
+  
+  return `${year}-${month}-${day}T${hours}:${minutes}`;
+};
+
 const TeacherDashboard = () => {
   const { teacherSlots, addSlot, deleteSlot, completeSlot, teacherName } = useSlots();
-  const [startTime, setStartTime] = useState('');
+  const [startTime, setStartTime] = useState(getNextRoundHour());
 
   // Calculate teacher-specific stats using useMemo for optimization
   const stats = useMemo(() => ({
@@ -20,7 +35,7 @@ const TeacherDashboard = () => {
 
     const result = await addSlot(startTime);
     if (result.success) {
-      setStartTime('');
+      setStartTime(getNextRoundHour());
       Swal.fire({
         title: 'Slot Created',
         text: 'Your 15-minute session has been added.',
@@ -75,7 +90,7 @@ const TeacherDashboard = () => {
 
       <div className="dashboard-grid">
         <div className="grid-col-1">
-          <section className="add-slot-section" style={{ borderRadius: '24px', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}>
+          <section className="add-slot-section" style={{ borderRadius: '24px', boxShadow: '0 4px 20px rgba(0,0,0,0.05)', border: 'none' }}>
             <h2 className="section-title">Create New Session</h2>
             <form onSubmit={handleSubmit} className="slot-form">
               <input 
@@ -84,7 +99,7 @@ const TeacherDashboard = () => {
                 value={startTime} 
                 onChange={(e) => setStartTime(e.target.value)}
                 required
-                style={{ borderRadius: '12px', border: '1px solid #e2e8f0', padding: '1rem' }}
+                style={{ borderRadius: '12px', border: 'none', padding: '1rem' }}
               />
               <button type="submit" className="btn-primary btn-3d">
                 + Generate 15m Slot
@@ -103,7 +118,7 @@ const TeacherDashboard = () => {
                 [...teacherSlots]
                   .sort((a, b) => new Date(b.startTime) - new Date(a.startTime))
                   .map(slot => (
-                  <div key={slot.id} className={`slot-card ${slot.status.toLowerCase()}`} style={{ borderRadius: '20px' }}>
+                  <div key={slot.id} className={`slot-card ${slot.status.toLowerCase()}`} style={{ borderRadius: '20px', border: 'none' }}>
                     <div className="slot-time-box">
                       <div className="time-icon">⏰</div>
                       <div className="time-text">

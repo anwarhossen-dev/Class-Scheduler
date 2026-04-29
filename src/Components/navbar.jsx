@@ -12,7 +12,7 @@ const Navbar = () => {
 
   async function handleLogout() {
     Swal.fire({
-      title: 'Sign Out?',
+      title: 'Sign Out',
       text: "Are you sure you want to log out?",
       icon: 'warning',
       showCancelButton: true,

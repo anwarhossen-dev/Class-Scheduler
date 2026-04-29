@@ -28,7 +28,7 @@
   padding: 1.5rem;
   background: #f8fafc;
   color: #334155;
-  border: 1px solid #e2e8f0;
+  border: none;
   border-radius: 20px;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -38,7 +38,6 @@
 .qa-button:hover {
   background: white;
   color: var(--primary);
-  border-color: var(--primary);
   transform: translateY(-5px);
   box-shadow: 0 12px 24px rgba(99, 102, 241, 0.1);
 }

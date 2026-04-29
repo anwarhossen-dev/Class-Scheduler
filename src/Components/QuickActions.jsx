@@ -9,15 +9,13 @@ const QuickActions = () => {
   const teacherActions = [
     { icon: '➕', label: 'Create Session', path: '/teacher' },
     { icon: '📋', label: 'View Schedule', path: '/teacher' },
-    { icon: '👥', label: 'Manage Students', path: '#' },
-    { icon: '📊', label: 'View Reports', path: '/dashboard' }
+    { icon: '👥', label: 'Manage Students', path: '#' }
   ];
 
   const studentActions = [
     { icon: '📅', label: 'Book Session', path: '/student' },
     { icon: '📋', label: 'My Bookings', path: '/student' },
-    { icon: '📝', label: 'Feedback', path: '#' },
-    { icon: '❓', label: 'Help', path: '#' }
+    { icon: '📝', label: 'Feedback', path: '#' }
   ];
 
   const actions = currentUser?.role === 'Teacher' ? teacherActions : studentActions;

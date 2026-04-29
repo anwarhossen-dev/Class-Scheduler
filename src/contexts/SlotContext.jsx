@@ -45,7 +45,10 @@ export const SlotProvider = ({ children }) => {
       return { success: false, message: "Cannot add a slot in the past." };
     }
 
-    const isOverlapping = slots.some(slot => {
+    const isOverlapping = slots.some((slot) => {
+      // Only check for overlaps within the current teacher's own schedule
+      if (slot.teacherId !== currentUser?.id) return false;
+
       const s = new Date(slot.startTime);
       const e = new Date(slot.endTime);
       return start < e && end > s;

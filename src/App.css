@@ -92,7 +92,8 @@ body {
   top: 0;
   z-index: 100;
   padding: 1rem 2.5rem; /* Match the dashboard padding */
-  margin-left: 260px; /* Offset to align with main content */
+  width: 100%;
+  left: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -101,7 +102,6 @@ body {
 }
 
 @media (max-width: 1024px) {
-  .navbar { margin-left: 80px; }
 }
 
 @media (max-width: 768px) {
@@ -228,6 +228,27 @@ h1 {
   transform: scale(0.98);
 }
 
+/* NEW: Danger Button Style */
+.btn-danger {
+  background: linear-gradient(135deg, var(--danger) 0%, #dc2626 100%); /* Using --danger variable */
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-danger:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(244, 63, 94, 0.4); /* Shadow based on danger color */
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
 /* Cards and Messages */
 .stat-pill {
   background: white;
@@ -248,13 +269,11 @@ h1 {
 .message.success {
   background: #dcfce7;
   color: #15803d;
-  border: 1px solid #22c55e;
 }
 
 .message.error {
   background: #fee2e2;
   color: #991b1b;
-  border: 1px solid #ef4444;
 }
 
 /* Form Styles */
@@ -269,7 +288,7 @@ h1 {
   flex: 1;
   min-width: 200px;
   padding: 0.75rem 1rem;
-  border: 1px solid var(--border);
+  border: none;
   border-radius: 8px;
   font-size: 1rem;
 }
@@ -294,8 +313,7 @@ h1 {
   padding: 1.5rem;
   box-shadow: var(--shadow-sm);
   transition: all 0.3s ease;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  border: none;
 }
 
 .slot-card:hover {
@@ -304,17 +322,14 @@ h1 {
 }
 
 .slot-card.available {
-  border-color: #d1fae5;
   background: linear-gradient(135deg, #f0fdf4 0%, #f0fdf4 100%);
 }
 
 .slot-card.booked {
-  border-color: #bfdbfe;
   background: linear-gradient(135deg, #f0f9ff 0%, #f0f9ff 100%);
 }
 
 .slot-card.completed {
-  border-color: #fef3c7;
   background: linear-gradient(135deg, #fefce8 0%, #fefce8 100%);
 }
 
@@ -342,7 +357,7 @@ h1 {
   justify-content: space-between;
   align-items: center;
   padding-top: 1rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-top: none;
 }
 
 .badge {
@@ -367,6 +382,12 @@ h1 {
   background: #fef3c7;
   color: #92400e;
 }
+
+.badge-completed {
+  background: #e2e8f0; /* Light gray for completed */
+  color: #64748b; /* Muted text color */
+}
+
 
 .book-btn {
   width: 100%;
@@ -448,6 +469,17 @@ h1 {
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
+.stat-pill.clickable {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.stat-pill.clickable:hover {
+  transform: translateY(-2px);
+  background: #f8fafc;
+  box-shadow: var(--shadow-md);
+}
+
 .stat-pill strong {
   color: var(--text-main);
   margin-left: 0.25rem;
@@ -462,8 +494,7 @@ h1 {
     0 10px 25px -5px rgba(0, 0, 0, 0.1),
     0 20px 40px -10px rgba(0, 0, 0, 0.1),
     0 1px 0 rgba(255, 255, 255, 0.5) inset;
-  border-top: 1px solid var(--border);
-  border-bottom: 6px solid #e2e8f0; 
+  border: none !important;
   border-left: none !important;
   border-right: none !important;
   transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -490,10 +521,7 @@ h1 {
 }
 
 .auth-input-3d {
-  border-top: none !important;
-  border-left: none !important;
-  border-right: none !important;
-  border-bottom: 2px solid #f1f5f9 !important;
+  border: none !important;
   background: #f8fafc !important;
   border-radius: 8px 8px 0 0 !important;
   transition: all 0.3s ease !important;
@@ -685,8 +713,7 @@ button {
   padding: 1.5rem;
   border-radius: 0;
   box-shadow: var(--shadow-md);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  border: none;
 }
 
 .react-calendar {

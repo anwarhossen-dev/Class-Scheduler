@@ -51,14 +51,14 @@
   background: #f8fafc;
   border-radius: 18px;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid transparent;
+  border: none;
 }
 
 .activity-item:hover {
   background: white;
   transform: translateX(8px);
   box-shadow: 0 10px 25px -5px rgba(0,0,0,0.06);
-  border-color: #e2e8f0;
+  border: none;
 }
 
 .activity-icon {

@@ -21,7 +21,7 @@ const Attendance = () => {
       <div className="auth-card-3d" style={{ marginTop: '2rem' }}>
         <table style={{ width: '100%', borderCollapse: 'collapse' }}>
           <thead>
-            <tr style={{ textAlign: 'left', borderBottom: '2px solid #f1f5f9' }}>
+            <tr style={{ textAlign: 'left', borderBottom: 'none' }}>
               <th style={{ padding: '1rem' }}>Date & Time</th>
               <th style={{ padding: '1rem' }}>Status</th>
               <th style={{ padding: '1rem' }}>Action</th>
@@ -32,7 +32,7 @@ const Attendance = () => {
               <tr><td colSpan="3" style={{ padding: '2rem', textAlign: 'center', color: '#64748b' }}>No bookings found for attendance.</td></tr>
             ) : (
               managedSlots.map(slot => (
-                <tr key={slot.id} style={{ borderBottom: '1px solid #f1f5f9' }}>
+                <tr key={slot.id} style={{ borderBottom: 'none' }}>
                   <td style={{ padding: '1rem' }}>
                     {new Date(slot.startTime).toLocaleString([], { dateStyle: 'medium', timeStyle: 'short' })}
                   </td>
