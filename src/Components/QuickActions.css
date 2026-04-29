@@ -1,0 +1,64 @@
+.quick-actions {
+  background: white;
+  border-radius: 24px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.qa-header h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #111827;
+  margin: 0 0 2rem 0;
+  letter-spacing: -0.02em;
+}
+
+.qa-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.25rem;
+}
+
+.qa-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  background: #f8fafc;
+  color: #334155;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 700;
+}
+
+.qa-button:hover {
+  background: white;
+  color: var(--primary);
+  border-color: var(--primary);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(99, 102, 241, 0.1);
+}
+
+.qa-icon {
+  font-size: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.qa-button:hover .qa-icon {
+  transform: scale(1.2);
+}
+
+@media (max-width: 480px) {
+  .qa-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+  
+  .qa-button {
+    padding: 1rem;
+  }
+}

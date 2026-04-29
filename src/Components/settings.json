@@ -1,0 +1,22 @@
+{
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "always"
+  },
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "package.json": "package-lock.json, .gitignore, .env*, firebase.json, firebaseAdmin.js",
+    "*.jsx": "$(capture).css, $(capture).test.jsx",
+    "firebase.config.js": "firebaseAdmin.js",
+    "AuthProvider.jsx": "SlotContext.js"
+  },
+  "editor.inlineSuggest.enabled": true
+}

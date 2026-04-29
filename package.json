@@ -1,6 +1,9 @@
 {
   "name": "class-scheduler-root",
+  "version": "1.0.0",
+  "$schema": "https://json.schemastore.org/package",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "npm run dev --prefix \"Class Scheduler\"",
     "build": "npm run build --prefix \"Class Scheduler\"",
@@ -8,6 +11,8 @@
     "preview": "npm run preview --prefix \"Class Scheduler\""
   },
   "dependencies": {
+    "firebase": "^11.3.1",
+    "firebase-admin": "^13.1.0",
     "i18next": "^26.0.8",
     "react-i18next": "^17.0.6",
     "react-router-dom": "^7.14.2"

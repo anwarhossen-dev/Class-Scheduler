@@ -1,0 +1,50 @@
+{
+  "navbar": {
+    "teacherDashboard": "Teacher Dashboard",
+    "studentView": "Student View",
+    "logout": "Logout",
+    "classScheduler": "Class Scheduler"
+  },
+  "auth": {
+    "welcomeBack": "Welcome Back",
+    "joinClassScheduler": "Join Class Scheduler",
+    "loginDescription": "Enter your credentials to continue",
+    "signupDescription": "Create your account to start booking sessions",
+    "fullName": "Full Name",
+    "namePlaceholder": "John Doe",
+    "iAm": "I AM A...",
+    "student": "Student",
+    "teacher": "Teacher",
+    "email": "Email Address",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "passwordMismatch": "Passwords do not match",
+    "login": "Login",
+    "signup": "Sign Up",
+    "noAccount": "Don't have an account?",
+    "haveAccount": "Already have an account?"
+  },
+  "teacherDashboard": {
+    "title": "Teacher Dashboard",
+    "teacher": "Teacher",
+    "createdSlots": "Created Slots",
+    "createNewSession": "Create New Session",
+    "generate15mSlot": "Generate 15m Slot",
+    "scheduleOverview": "Schedule Overview",
+    "noSessions": "No sessions scheduled yet. Start by creating a slot above.",
+    "15minSession": "15 Min Session"
+  },
+  "studentView": {
+    "title": "Book a Session",
+    "description": "Select a time slot that works best for your schedule.",
+    "noAvailable": "No available slots right now. Check back soon!",
+    "instructor": "Instructor",
+    "reserveSpot": "Reserve Spot",
+    "bookingConfirmed": "🎉 Booking Confirmed! See you there."
+  },
+  "common": {
+    "available": "Available",
+    "booked": "Booked",
+    "error": "Error"
+  }
+}
