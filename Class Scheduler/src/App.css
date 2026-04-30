@@ -25,18 +25,16 @@
   --radius-sm: 10px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg-main: #0f172a;
-    --bg-card: rgba(30, 41, 59, 0.6);
-    --bg-glass: rgba(15, 23, 42, 0.6);
-    --text-main: #f8fafc;
-    --text-muted: #94a3b8;
-    --border: rgba(255, 255, 255, 0.08);
-    --border-solid: #334155;
-    
-    --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-  }
+html.dark {
+  --bg-main: #0f172a;
+  --bg-card: rgba(30, 41, 59, 0.6);
+  --bg-glass: rgba(15, 23, 42, 0.6);
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-solid: #334155;
+  
+  --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
 }
 
 * {
