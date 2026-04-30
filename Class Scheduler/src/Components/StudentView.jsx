@@ -13,7 +13,7 @@ const StudentView = () => {
     <div className="student-view">
       <header className="view-header">
         <h1>Book a Session</h1>
-        <p style={{ color: '#64748b', fontSize: '1.1rem' }}>
+        <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem' }}>
           Select a time slot that works best for your schedule.
         </p>
       </header>
@@ -21,7 +21,7 @@ const StudentView = () => {
       <div className="slots-grid">
         {availableSlots.length === 0 ? (
           <div className="no-slots">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#e2e8f0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '1rem' }}><circle cx="12" cy="12" r="10"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '1rem', opacity: 0.5 }}><circle cx="12" cy="12" r="10"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
             <p>No available slots right now. Check back soon!</p>
           </div>
         ) : (
@@ -36,14 +36,14 @@ const StudentView = () => {
                 </div>
               </div>
               
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1.5rem', fontSize: '0.9rem', color: '#475569' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1.5rem', fontSize: '0.9rem', color: 'var(--text-muted)' }}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                 {new Date(slot.startTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} - {new Date(slot.endTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
               </div>
 
-              <div style={{ padding: '0.75rem', background: '#f8fafc', borderRadius: '8px', marginBottom: '1rem' }}>
-                <span style={{ fontSize: '0.8rem', color: '#64748b', display: 'block' }}>Instructor</span>
-                <span style={{ fontWeight: '600' }}>{slot.teacherName}</span>
+              <div style={{ padding: '0.75rem', background: 'var(--bg-main)', borderRadius: '8px', marginBottom: '1rem', border: '1px solid var(--border-solid)' }}>
+                <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', display: 'block' }}>Instructor</span>
+                <span style={{ fontWeight: '700', color: 'var(--text-main)' }}>{slot.teacherName}</span>
               </div>
 
               <button 

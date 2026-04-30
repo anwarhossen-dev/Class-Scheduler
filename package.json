@@ -5,8 +5,9 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "postinstall": "npm install --prefix \"Class Scheduler\"",
     "dev": "npm run dev --prefix \"Class Scheduler\"",
-    "build": "npm run build --prefix \"Class Scheduler\"",
+    "build": "npm run build --prefix \"Class Scheduler\" && cp -R \"Class Scheduler/dist\" dist",
     "lint": "npm run lint --prefix \"Class Scheduler\"",
     "preview": "npm run preview --prefix \"Class Scheduler\""
   },
