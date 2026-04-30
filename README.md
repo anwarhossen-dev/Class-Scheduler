@@ -3,7 +3,9 @@
 A simple, real-world scheduling system for institutions where teachers can manage their availability and students can book 15-minute learning sessions. Built with a focus on clean logic, responsive UI/UX, and robust validation.
 
 ## 🚀 Live Demo
-[Link to your live demo here]
+[https://class-scheduler-navy.vercel.app/]
+email: anowar.gtrbd@gmail.com
+pass: Kabir@1234
 
 ## 🛠️ Technology Stack
 - **Frontend:** React.js (Vite)
