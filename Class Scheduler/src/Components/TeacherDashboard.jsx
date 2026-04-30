@@ -26,7 +26,16 @@ const TeacherDashboard = () => {
             Teacher: <strong>{teacherName}</strong>
           </div>
           <div className="stat-pill">
-            Created Slots: <strong>{totalSlots}</strong>
+            Total: <strong>{totalSlots}</strong>
+          </div>
+          <div className="stat-pill">
+            Available: <strong style={{ color: 'var(--secondary)' }}>{slots.filter(s => s.status === 'Available').length}</strong>
+          </div>
+          <div className="stat-pill">
+            Booked: <strong style={{ color: 'var(--warning)' }}>{slots.filter(s => s.status === 'Booked').length}</strong>
+          </div>
+          <div className="stat-pill">
+            Completed: <strong style={{ color: 'var(--text-muted)' }}>{slots.filter(s => s.status === 'Completed').length}</strong>
           </div>
         </div>
       </header>

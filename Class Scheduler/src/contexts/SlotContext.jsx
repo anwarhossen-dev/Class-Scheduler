@@ -57,13 +57,22 @@ export const SlotProvider = ({ children }) => {
     return { success: true, message: "Slot booked successfully!" };
   };
 
+  // Dynamically update status for past slots
+  const processedSlots = slots.map(slot => {
+    const now = new Date();
+    if (new Date(slot.endTime) < now && slot.status !== 'Completed') {
+      return { ...slot, status: 'Completed' };
+    }
+    return slot;
+  });
+
   return (
     <SlotContext.Provider value={{ 
-      slots, 
+      slots: processedSlots, 
       addSlot, 
       bookSlot, 
       teacherName, 
-      totalSlots: slots.length 
+      totalSlots: processedSlots.length 
     }}>
       {children}
     </SlotContext.Provider>
