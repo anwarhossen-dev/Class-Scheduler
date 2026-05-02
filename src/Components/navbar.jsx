@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useNotifications } from '../contexts/NotificationContext';
 import Swal from 'sweetalert2';
 
-const Navbar = () => {
+const Navbar = ({ onToggleMenu }) => {
   const { currentUser, logout } = useAuth();
   const { addNotification } = useNotifications();
   const navigate = useNavigate();
@@ -42,7 +42,7 @@ const Navbar = () => {
       <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
         <button 
           className="mobile-menu-btn"
-          onClick={() => document.querySelector('.sidebar')?.classList.toggle('mobile-open')}
+          onClick={onToggleMenu}
           style={{ 
             display: 'none', 
             background: 'none', 

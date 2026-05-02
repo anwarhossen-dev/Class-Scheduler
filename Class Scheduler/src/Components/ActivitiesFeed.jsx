@@ -1,14 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useMemo } from 'react';
 import { useSlots } from '../contexts/SlotContext';
 import './ActivitiesFeed.css';
 
 const ActivitiesFeed = () => {
   const { slots } = useSlots();
-  const [activities, setActivities] = useState([]);
 
-  useEffect(() => {
+  const activities = useMemo(() => {
     // Generate activities from slots
-    const recentActivities = slots
+    return slots
       .sort((a, b) => new Date(b.startTime) - new Date(a.startTime))
       .slice(0, 5)
       .map(slot => ({
@@ -19,8 +18,6 @@ const ActivitiesFeed = () => {
         time: new Date(slot.startTime),
         icon: slot.status === 'Booked' ? '✓' : slot.status === 'Completed' ? '✅' : '⏰'
       }));
-    
-    setActivities(recentActivities);
   }, [slots]);
 
   const getActivityColor = (type) => {

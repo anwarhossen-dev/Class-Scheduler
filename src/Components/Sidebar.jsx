@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import './Sidebar.css';
 
-const Sidebar = () => {
+const Sidebar = ({ isMobileOpen, onClose }) => {
   const { currentUser, logout } = useAuth();
   const [collapsed, setCollapsed] = useState(false);
 
@@ -22,7 +22,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <aside className={`sidebar ${collapsed ? 'collapsed' : ''}`}>
+    <aside className={`sidebar ${collapsed ? 'collapsed' : ''} ${isMobileOpen ? 'mobile-open' : ''}`}>
       <div className="sidebar-header">
         <button 
           className="sidebar-toggle"
@@ -37,12 +37,12 @@ const Sidebar = () => {
       <nav className="sidebar-menu">
         {menuItems.map((item, idx) => (
           item.href.startsWith('/') ? (
-            <Link key={idx} to={item.href} className="menu-item">
+            <Link key={idx} to={item.href} className="menu-item" onClick={onClose}>
               <span className="menu-icon">{item.icon}</span>
               {!collapsed && <span className="menu-label">{item.label}</span>}
             </Link>
           ) : (
-            <a key={idx} href={item.href} className="menu-item">
+            <a key={idx} href={item.href} className="menu-item" onClick={onClose}>
               <span className="menu-icon">{item.icon}</span>
               {!collapsed && <span className="menu-label">{item.label}</span>}
             </a>

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useMemo } from 'react';
 import { useSlots } from '../contexts/SlotContext';
 import { useAuth } from '../contexts/AuthContext';
 import ActivitiesFeed from './ActivitiesFeed';
@@ -10,24 +10,18 @@ import './Dashboard.css';
 const Dashboard = () => {
   const { slots } = useSlots();
   const { currentUser } = useAuth();
-  const [stats, setStats] = useState({
-    totalSessions: 0,
-    bookedSessions: 0,
-    availableSessions: 0,
-    completedSessions: 0,
-  });
 
-  useEffect(() => {
+  const stats = useMemo(() => {
     const booked = slots.filter(s => s.status === 'Booked').length;
     const available = slots.filter(s => s.status === 'Available').length;
     const completed = slots.filter(s => s.status === 'Completed').length;
     
-    setStats({
+    return {
       totalSessions: slots.length,
       bookedSessions: booked,
       availableSessions: available,
       completedSessions: completed,
-    });
+    };
   }, [slots]);
 
   return (

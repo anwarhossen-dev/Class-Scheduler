@@ -118,7 +118,7 @@ const Navbar = () => {
             >
               {t('navbar.logout')}
             </button>
-          </>
+          </div>
         ) : (
           <Link to="/login">Login</Link>
         )}
